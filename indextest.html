@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOTD Test</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .box {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 8px;
+            border: 2px solid #333;
+            text-align: center;
+            max-width: 400px;
+        }
+        h1 { color: #4CAF50; margin-top: 0; }
+        button {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover { background: #0b7dda; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>HTML Render Test</h1>
+        <p>If you see styled text, HTML and CSS are working properly.</p>
+        <p id="clock">Loading clock...</p>
+        <button onclick="runTest()">Test JavaScript</button>
+        <p id="status" style="color: #ffca28; margin-top: 15px;"></p>
+    </div>
+
+    <script>
+        // Test JS execution with dynamic time
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('clock').innerText = "System Time: " + now.toLocaleTimeString();
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Test JS button handler
+        function runTest() {
+            document.getElementById('status').innerText = "✓ JavaScript executed successfully!";
+        }
+    </script>
+</body>
+</html>
